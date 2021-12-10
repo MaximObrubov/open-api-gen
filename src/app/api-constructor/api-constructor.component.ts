@@ -1,4 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  ComponentFactoryResolver,
+  ComponentFactory
+} from '@angular/core';
 
 @Component({
   selector: 'app-api-constructor',
@@ -17,5 +22,11 @@ export class ApiConstructorComponent implements OnInit {
     console.log("here");
     console.groupEnd();
   }
+  
+  // createComponent(type) {
+  //   this.container.clear();
+  //   const factory: ComponentFactory = this.resolver.resolveComponentFactory(AlertComponent);
+  //   this.componentRef: ComponentRef = this.container.createComponent(factory);
+  // }
 
 }

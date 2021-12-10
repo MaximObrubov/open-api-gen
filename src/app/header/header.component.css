@@ -1,0 +1,4 @@
+app-header {
+  background-color: var(--root-bg-accent);
+  height: var(--header-height);
+};

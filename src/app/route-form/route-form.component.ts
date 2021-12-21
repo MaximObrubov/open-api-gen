@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
+import { Component, OnInit, Input } from '@angular/core';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { RouteEntityTypes, Route } from '../model/route';
 
 @Component({
   selector: 'app-route-form',
@@ -8,21 +9,23 @@ import { FormGroup, FormControl } from '@angular/forms';
 })
 export class RouteFormComponent implements OnInit {
   
+  @Input() route: Route;
+  
   routeGroup = new FormGroup({
-    route: new FormControl(''),
+    route: new FormControl('', Validators.required,),
     type: new FormControl(''),
   });
-
-  constructor() { }
+  
+  types = Object.keys(RouteEntityTypes);
+  
+  constructor() {
+  }
 
   ngOnInit(): void {
   }
   
-  
-  onSubmit() {
-    console.group("%c Custom log:", "background: lightgreen; color: orange; font-size: 16px;");
-    console.log(this.routeGroup);
-    console.groupEnd();
+  onSubmit(): void {
+    this.route.isComplete = true;
   }
 
 }

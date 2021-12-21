@@ -15,6 +15,10 @@ import { Route } from '../model/route';
 export class ApiConstructorComponent implements OnInit {
   
   routes: Array<Route> = [];
+  
+  filterCompletedRoutes = {isComplete: true}
+  
+  filterNotCompletedRoutes = {isComplete: false}
 
   constructor() {
   }
@@ -28,15 +32,8 @@ export class ApiConstructorComponent implements OnInit {
   
   onSubmit(): void {
     console.group("%c Custom log:", "background: lightgreen; color: orange; font-size: 16px;");
-    console.log("here");
+    console.log(this.routes);
     console.groupEnd();
   }
-  
-  
-  // createComponent(type) {
-  //   this.container.clear();
-  //   const factory: ComponentFactory = this.resolver.resolveComponentFactory(AlertComponent);
-  //   this.componentRef: ComponentRef = this.container.createComponent(factory);
-  // }
 
 }

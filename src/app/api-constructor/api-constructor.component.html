@@ -1,6 +1,11 @@
 
 
-<app-route-form *ngFor="let route of routes; index as i;" (submit)="onSubmit()">
+<div *ngFor="let route of routes; index as i;">!{{route.url}} {{route.type}}!</div>
+
+<app-route *ngFor="let route of routes | routeFilter:filterCompletedRoutes; index as i;" [route]="route">
+</app-route>
+
+<app-route-form *ngFor="let route of routes | routeFilter:filterNotCompletedRoutes; index as i;" [route]="route" (submit)="onSubmit()">
   
 </app-route-form>
 

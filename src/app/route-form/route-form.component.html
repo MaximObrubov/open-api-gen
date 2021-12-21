@@ -1,4 +1,7 @@
 <form [formGroup]="routeGroup" (ngSubmit)="onSubmit()">
-  <input type="text" id="route" placeholder="Введите относительный путь">
+  <input type="text" id="route"  formControlName="route" [(ngModel)]="route.url" placeholder="Введите относительный путь">
+  <select id="type" formControlName="type" [(ngModel)]="route.type">
+    <option *ngFor="let type of types" [value]="type">{{type}}</option>
+  </select>
   <input type="submit">
 </form>

@@ -1,10 +1,8 @@
 import {
   Component,
   OnInit,
-  ComponentFactoryResolver,
-  ComponentFactory
 } from '@angular/core';
-
+import { RouteService } from '../route.service';
 import { Route } from '../model/route';
 
 @Component({
@@ -14,16 +12,23 @@ import { Route } from '../model/route';
 })
 export class ApiConstructorComponent implements OnInit {
   
-  routes: Array<Route> = [];
+  routes: Array<Route>;
   
   filterCompletedRoutes = {isComplete: true}
   
   filterNotCompletedRoutes = {isComplete: false}
 
-  constructor() {
+  constructor(private routeService: RouteService) {
   }
 
   ngOnInit(): void {
+    this.getRoutes();
+  }
+  
+  getRoutes(): void {
+    this.routeService
+      .getRoutes()
+      .subscribe(routes => this.routes = routes);
   }
   
   onClickAdd(): void {

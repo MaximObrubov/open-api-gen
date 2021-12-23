@@ -1,15 +1,11 @@
 
-
-<div *ngFor="let route of routes; index as i;">!{{route.url}} {{route.type}}!</div>
-
-<app-route *ngFor="let route of routes | routeFilter:filterCompletedRoutes; index as i;" [route]="route">
-</app-route>
-
-<app-route-form *ngFor="let route of routes | routeFilter:filterNotCompletedRoutes; index as i;" [route]="route" (submit)="onSubmit()">
+<div class="api-constructor">
+  <app-route *ngFor="let route of routes | routeFilter:filterCompletedRoutes; index as i;" [route]="route">
+  </app-route>
   
-</app-route-form>
-
-
-<button (click)="onClickAdd()">
-  Add route
-</button>
+  <app-route-form *ngFor="let route of routes | routeFilter:filterNotCompletedRoutes; index as i;" [route]="route" [onSubmitCallback]="onSubmit()">
+  </app-route-form>
+  
+  <button (click)="onClickAdd()">Add route</button>
+  <button (click)="onClickClear()">Clear</button>
+</div>

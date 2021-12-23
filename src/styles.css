@@ -1,9 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
 :root {
-  --root-base-color: #444;
-  --root-accent-color: #2d3842;
-  --root-base-bg: #cedad4;
-  --root-accent-bg: #74c182;
+  --root-base-color: #1a3f6b;
+  --root-accent-color: #104473;
+  --root-base-bg: #ced8da;
+  --root-accent-bg: #a0c1e3;
   
   --header-size: 50px;
 }
@@ -24,7 +24,7 @@ body {
 }
 body, input[type="text"], button {
   color: var(--root-base-color);
-  font-family: Cambria, Georgia, serif;
+  font-family: Helvetica, Georgia, serif;
 }
 /* everywhere else */
 * {

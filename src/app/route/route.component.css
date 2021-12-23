@@ -1,0 +1,15 @@
+.route {
+  padding: 10px;
+  border-bottom: 1px solid var(--root-accent-bg);
+  clear: both;
+}
+
+.route > * {
+  font-family: monospace;
+}
+
+.route > div {
+  float: left;
+  padding-right: 20px;
+  min-width: 100px;
+}

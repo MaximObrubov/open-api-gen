@@ -14,9 +14,10 @@ export class ApiConstructorComponent implements OnInit {
   
   routes: Array<Route>;
   
-  filterCompletedRoutes = {isComplete: true}
+  // QUESTION: why not understanding getters? I don't whant to use private props
+  filterCompletedRoutes = {_isComplete: true}
   
-  filterNotCompletedRoutes = {isComplete: false}
+  filterNotCompletedRoutes = {_isComplete: false}
 
   constructor(private routeService: RouteService) {
   }
@@ -35,10 +36,14 @@ export class ApiConstructorComponent implements OnInit {
     this.routes.push(new Route());
   }
   
-  onSubmit(): void {
-    console.group("%c Custom log:", "background: lightgreen; color: orange; font-size: 16px;");
-    console.log(this.routes);
-    console.groupEnd();
+  onClickClear(): void {
+    this.routeService.clearRoutes();
+  }
+  
+  onSubmit(): () => void {
+    return () => {
+      this.routeService.setRoutes(this.routes);
+    }
   }
 
 }

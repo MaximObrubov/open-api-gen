@@ -11,6 +11,8 @@ export class RouteFormComponent implements OnInit {
   
   @Input() route: Route;
   
+  @Input() onSubmitCallback: () => void;
+  
   routeGroup = new FormGroup({
     route: new FormControl('', Validators.required,),
     type: new FormControl(''),
@@ -26,6 +28,8 @@ export class RouteFormComponent implements OnInit {
   
   onSubmit(): void {
     this.route.isComplete = true;
+  
+    if (typeof this.onSubmitCallback === 'function') this.onSubmitCallback();
   }
 
 }

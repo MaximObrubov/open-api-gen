@@ -6,6 +6,10 @@
   <app-route-form *ngFor="let route of routes | routeFilter:filterNotCompletedRoutes; index as i;" [route]="route" [onSubmitCallback]="onSubmit()">
   </app-route-form>
   
+  <!-- QUESTION: why the duck -->
+  <!--table mat-table [dataSource]="let route of completedRoutes;">
+  </table-->
+  
   <button (click)="onClickAdd()">Add route</button>
   <button (click)="onClickClear()">Clear</button>
 </div>

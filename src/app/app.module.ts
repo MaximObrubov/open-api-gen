@@ -26,7 +26,7 @@ import { RouteComponent } from './route/route.component';
     AppRoutingModule,
     ReactiveFormsModule,
   ],
-  providers: [],
+  providers: [RouteFilterPipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

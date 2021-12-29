@@ -1,0 +1,20 @@
+app-header {
+  background-color: var(--root-accent-bg);
+  height: var(--header-height);
+  color: white;
+  display: block;
+  padding: 15px var(--body-offset);
+}
+
+.content {
+  flex: auto;
+  padding: 15px var(--body-offset);
+}
+
+app-footer {
+  background-color: var(--root-accent-bg);
+  height: var(--header-height);
+  color: white;
+  display: block;
+  padding: 15px var(--body-offset);
+}

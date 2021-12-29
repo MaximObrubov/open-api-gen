@@ -2,26 +2,51 @@
 :root {
   --root-base-color: #1a3f6b;
   --root-accent-color: #104473;
-  --root-base-bg: #ced8da;
-  --root-accent-bg: #a0c1e3;
+  --root-base-bg: #e4ebf5;
+  --root-accent-bg: #5c8bbb;
   
   --header-size: 50px;
+  --body-offset: 25px;
+}
+
+
+html, body {
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: var(--root-base-bg);
+}
+
+app-root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+main {
+  flex: auto;
+  background-color: #ccc;
+}
+
+footer {
+  height: 25px;
 }
 
 h1 {
   color: var(--root-accent-color);
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 250%;
+  font-size: 150%;
 }
 h2, h3 {
   color: #444;
   font-family: Arial, Helvetica, sans-serif;
   font-weight: lighter;
 }
-body {
-  margin: 2em;
-  background-color: var(--root-base-bg);
-}
+
 body, input[type="text"], button {
   color: var(--root-base-color);
   font-family: Helvetica, Georgia, serif;

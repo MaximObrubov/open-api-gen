@@ -21,10 +21,8 @@ export class ApiConstructorComponent implements OnInit {
   filterCompletedRoutes = {_isComplete: true}
   
   filterNotCompletedRoutes = {_isComplete: false}
-  
-  routePipe: RouteFilterPipe;
 
-  constructor(private routeService: RouteService, routePipe: RouteFilterPipe) {
+  constructor(private routeService: RouteService) {
   }
 
   ngOnInit(): void {
@@ -35,7 +33,7 @@ export class ApiConstructorComponent implements OnInit {
     this.routeService
       .getRoutes()
       .subscribe(routes => this.routes = routes);
-    this.completedRoutes = this.routePipe.transform(this.routes, this.filterCompletedRoutes)
+    this.completedRoutes = this.routes.filter(r => r.isComplete);
   }
   
   onClickAdd(): void {
@@ -53,7 +51,7 @@ export class ApiConstructorComponent implements OnInit {
   onSubmit(): () => void {
     return () => {
       this.routeService.setRoutes(this.routes);
-      this.completedRoutes = this.routePipe.transform(this.routes, this.filterCompletedRoutes)
+      this.completedRoutes = this.routes.filter(r => r.isComplete); 
     }
   }
 

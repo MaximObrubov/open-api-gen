@@ -1,0 +1,11 @@
+.result-wrp {
+  --padding: 10px;
+  float: right;
+  width: 50%;
+  border: 1px solid var(--root-accent-bg);
+  background-color: #fff;
+  min-height: 100%;
+  padding: var(--padding);
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}

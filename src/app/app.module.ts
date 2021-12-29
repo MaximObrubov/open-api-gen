@@ -11,6 +11,8 @@ import { RouteFormComponent } from './route-form/route-form.component';
 
 import { RouteFilterPipe } from '../app/api-constructor/routeFilterPipe';
 import { RouteComponent } from './route/route.component';
+import { ResultComponent } from './result/result.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { RouteComponent } from './route/route.component';
     ApiConstructorComponent,
     RouteFormComponent,
     RouteFilterPipe,
-    RouteComponent
+    RouteComponent,
+    ResultComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

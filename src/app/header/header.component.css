@@ -1,4 +1,5 @@
-app-header {
-  background-color: var(--root-bg-accent);
-  height: var(--header-height);
-};
+h1 {
+  color: white;
+  margin: 0;
+  padding: 0;
+}

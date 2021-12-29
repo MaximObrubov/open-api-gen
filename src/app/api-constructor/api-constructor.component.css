@@ -3,4 +3,13 @@
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   padding: 0 20px 0 0;
+  float: left;
+}
+
+.api-constructor .buttons {
+  margin-top: 30px;
+}
+
+.api-constructor .buttons button {
+  margin: 0 15px 0 0;
 }

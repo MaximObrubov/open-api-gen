@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Route } from '../model/route';
+import { RouteService } from '../route.service';
 
 @Component({
   selector: 'app-result',
@@ -6,10 +8,25 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./result.component.css']
 })
 export class ResultComponent implements OnInit {
-
-  constructor() { }
+  
+  routes: Array<Route>;
+  
+  json: string;
+  
+  constructor(private routeService: RouteService) { }
 
   ngOnInit(): void {
+    // QUESTION: why this routes not changing
+    this.getRoutes();
+  }
+  
+  getRoutes() {
+    this.routeService
+      .getRoutes()
+      .subscribe(routes => {
+        this.routes = routes
+        this.json = JSON.stringify({ routes });
+      });
   }
 
 }

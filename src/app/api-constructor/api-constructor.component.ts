@@ -4,7 +4,6 @@ import {
 } from '@angular/core';
 import { RouteService } from '../route.service';
 import { Route } from '../model/route';
-import { RouteFilterPipe } from './routeFilterPipe';
 
 @Component({
   selector: 'app-api-constructor',
@@ -51,7 +50,7 @@ export class ApiConstructorComponent implements OnInit {
   onSubmit(): () => void {
     return () => {
       this.routeService.setRoutes(this.routes);
-      this.completedRoutes = this.routes.filter(r => r.isComplete); 
+      this.completedRoutes = this.routes.filter(r => r.isComplete);
     }
   }
 

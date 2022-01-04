@@ -1,7 +1,19 @@
-<form [formGroup]="routeGroup" (ngSubmit)="onSubmit()">
-  <input type="text" id="route"  formControlName="route" [(ngModel)]="route.url" placeholder="Введите относительный путь">
-  <select id="type" formControlName="type" [(ngModel)]="route.type">
-    <option *ngFor="let type of types" [value]="type">{{type}}</option>
-  </select>
+<form [formGroup]="routeGroup" (ngSubmit)="onSubmit()" class="route-form">
+  <fieldset>
+    <input type="text" id="route"  formControlName="route" [(ngModel)]="route.url" placeholder="Введите относительный путь">
+    <select id="type" formControlName="type" [(ngModel)]="route.type">
+      <option *ngFor="let type of types" [value]="type">{{type}}</option>
+    </select>
+  </fieldset>
+  <fieldset>
+    
+    <div *ngFor="let p of route.parameters; index as i;">
+      <input type="text" placeholder="Parameter name" />
+      <input type="text" placeholder="Parameter value" />
+    </div>
+    
+    
+    <button (click)="onAddParam($event)">Add parameter</button>
+  </fieldset>
   <input type="submit">
 </form>

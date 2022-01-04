@@ -1,0 +1,12 @@
+.route-form {
+  padding: 10px;
+}
+
+.route-form fieldset {
+  margin: 5px 0;
+}
+
+.route-form input, .route-form select {
+  display: inline-block;
+  margin: 0 10px 0 0;
+}

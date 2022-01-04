@@ -1,3 +1,5 @@
+import { QueryParameter } from './query-parameter';
+
 export enum RouteEntityTypes {
   GET = "GET",
   POST = "POST",
@@ -17,17 +19,18 @@ export class Route {
   
   id: number;
   
+  
   type?: RouteEntityTypes;
   
   url?: string;
   
-  parameters?: Array<any>;
+  body: object;
   
-  body?: object;
+  parameters: Array<QueryParameter>;
   
   private _isComplete: boolean = false;
     
-  constructor(type?: RouteEntityTypes, url?: string, parameters?: Array<any>, body?: object) {
+  constructor(type?: RouteEntityTypes, url?: string, parameters: Array<any> = [], body: object = {}) {
     // TODO: dynamic id creation
     this.id = 1;
     this.type = type;

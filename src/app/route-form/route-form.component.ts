@@ -1,6 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { RouteEntityTypes, Route } from '../model/route';
+import { QueryParameter } from '../model/query-parameter';
+
 
 @Component({
   selector: 'app-route-form',
@@ -30,6 +32,11 @@ export class RouteFormComponent implements OnInit {
     this.route.isComplete = true;
   
     if (typeof this.onSubmitCallback === 'function') this.onSubmitCallback();
+  }
+  
+  onAddParam(e: Event): void {
+    e.preventDefault();
+    this.route.parameters.push(new QueryParameter())
   }
 
 }

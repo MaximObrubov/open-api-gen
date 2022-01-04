@@ -16,17 +16,9 @@ export class ResultComponent implements OnInit {
   constructor(private routeService: RouteService) { }
 
   ngOnInit(): void {
-    // QUESTION: why this routes not changing
-    this.getRoutes();
+    this.routeService.routesObservable.subscribe((routes) => {
+      this.routes = routes;
+      this.json = JSON.stringify(this.routes, null, "\n");
+    });
   }
-  
-  getRoutes() {
-    this.routeService
-      .getRoutes()
-      .subscribe(routes => {
-        this.routes = routes
-        this.json = JSON.stringify({ routes });
-      });
-  }
-
 }

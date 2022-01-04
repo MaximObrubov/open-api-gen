@@ -25,14 +25,9 @@ export class ApiConstructorComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.getRoutes();
-  }
-  
-  getRoutes(): void {
-    this.routeService
-      .getRoutes()
-      .subscribe(routes => this.routes = routes);
-    this.completedRoutes = this.routes.filter(r => r.isComplete);
+    this.routeService.routesObservable.subscribe((routes) => {
+      this.routes = routes;
+    })
   }
   
   onClickAdd(): void {
@@ -40,10 +35,6 @@ export class ApiConstructorComponent implements OnInit {
   }
   
   onClickClear(): void {
-    console.group("%c Custom log:", "background: lightgreen; color: orange; font-size: 16px;");
-    console.log('clear');
-    console.groupEnd();
-    
     this.routeService.clearRoutes();
   }
   
